@@ -1,0 +1,1 @@
+# cordova-nfc-verify-demo
