@@ -1,0 +1,1 @@
+var mServerUrl = "http://tagtalk.waapoh.com/WriteTag";

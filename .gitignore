@@ -1,0 +1,7 @@
+/nfc-reader/plugins
+/nfc-reader/hooks
+/nfc-reader/platforms
+/nfc-writer/plugins
+/nfc-writer/hooks
+/nfc-writer/platforms
+/server/target
