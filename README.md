@@ -1,1 +1,3 @@
-# cordova-nfc-verify-demo
+# 
+
+by cordova and nfc
