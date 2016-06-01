@@ -5,3 +5,4 @@
 /nfc-writer/hooks
 /nfc-writer/platforms
 /server/target
+*.jks

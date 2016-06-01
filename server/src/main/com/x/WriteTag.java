@@ -78,7 +78,7 @@ public class WriteTag extends HttpServlet {
           array[m++] = bb;
         }
         // LOG.debug(bytesToLong(array));
-        DaoTags daoTags = new DaoTags();
+        DaoTag daoTags = new DaoTag();
         daoTags.updateOrInsertTags(Utils.bytesToLong(array), Integer.parseInt(protocolWriteNfc.getWantStatus()));
         response.getWriter().print("{\"status\":\"success\",\"msg\":\"ok\"}");
       }

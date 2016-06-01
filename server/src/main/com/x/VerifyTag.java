@@ -78,7 +78,7 @@ public class VerifyTag extends HttpServlet {
           array[m++] = bb;
         }
      // LOG.debug(bytesToLong(array));
-        DaoTags daoTags = new DaoTags();
+        DaoTag daoTags = new DaoTag();
         response.getWriter().print("{\"status\":\"success\",\"msg\":\""+daoTags.verifyById(Utils.bytesToLong(array))+"\"}");
       }else{
         response.getWriter().print("{\"status\":\"error\",\"msg\":\"no content\"}");

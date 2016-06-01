@@ -7,9 +7,9 @@ import java.sql.ResultSet;
 import org.apache.log4j.Logger;
 import org.common.util.ConnectionService;
 
-public class DaoTags {
+public class DaoTag {
 
-  private final static Logger LOG = Logger.getLogger(DaoTags.class);
+  private final static Logger LOG = Logger.getLogger(DaoTag.class);
 
   public String verifyById(long id){
     String result = "Unknown.";
