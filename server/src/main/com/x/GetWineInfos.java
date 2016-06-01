@@ -8,10 +8,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.gson.Gson;
+import com.x.dao.DaoWine;
+import com.x.protocol.ProtocolWineInfos;
+
 /**
  * Servlet implementation class GetWineInfos
  */
-@WebServlet("asyncSupported = true,/GetWineInfos")
+@WebServlet(asyncSupported = true, urlPatterns = { "/GetWineInfos" })
 public class GetWineInfos extends HttpServlet {
   private static final long serialVersionUID = 1L;
 
@@ -29,6 +33,7 @@ public class GetWineInfos extends HttpServlet {
    */
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     // TODO Auto-generated method stub
+    getWines(request, response);
   }
 
   /**
@@ -36,7 +41,14 @@ public class GetWineInfos extends HttpServlet {
    *      response)
    */
   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    // TODO Auto-generated method stub
+    getWines(request, response);
   }
 
+  private void getWines(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    Gson gson = new Gson();
+    DaoWine daoWine = new DaoWine();
+    ProtocolWineInfos protocolWineInfos = new ProtocolWineInfos();
+    protocolWineInfos.setWineProducts(daoWine.getAllWines());
+    response.getWriter().print(gson.toJson(protocolWineInfos));
+  }
 }

@@ -22,9 +22,8 @@ public class DaoWine {
     ResultSet rs = null;
     try {
       con = ConnectionService.getInstance().getConnectionForLocal();
-      String sql = "SELECT * FROM wine_products ;";
+      String sql = "SELECT * FROM wine_products";
       ps = con.prepareStatement(sql);
-      int m = 1;
       rs = ps.executeQuery();
       while (rs.next()) {
         InfoWineProduct infoWineProduct = new InfoWineProduct();

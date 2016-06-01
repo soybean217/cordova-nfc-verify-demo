@@ -76,6 +76,13 @@
 				<runtime.env>packageConfig\product</runtime.env>
 				<final.name>tagtalk.waapoh.com</final.name>
 			</properties>
+		</profile>
+		<profile>
+			<id>betaLq</id>
+			<properties>
+				<runtime.env>packageConfig\betaLq</runtime.env>
+				<final.name>tagtalk</final.name>
+			</properties>
 			<activation>
 				<activeByDefault>true</activeByDefault>
 			</activation>
