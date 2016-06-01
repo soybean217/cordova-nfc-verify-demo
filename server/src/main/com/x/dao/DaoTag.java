@@ -1,4 +1,4 @@
-package com.x;
+package com.x.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

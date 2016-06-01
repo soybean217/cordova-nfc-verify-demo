@@ -1,4 +1,4 @@
-package com.x;
+package com.x.info;
 
 public class InfoWineProduct {
 

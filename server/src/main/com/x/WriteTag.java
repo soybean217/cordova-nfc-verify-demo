@@ -15,6 +15,8 @@ import org.apache.log4j.Logger;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
+import com.x.dao.DaoTag;
+import com.x.protocol.ProtocolWriteNfc;
 
 /**
  * Servlet implementation class WriteTag

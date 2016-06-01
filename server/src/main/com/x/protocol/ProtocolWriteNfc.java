@@ -1,4 +1,6 @@
-package com.x;
+package com.x.protocol;
+
+import com.x.info.InfoNfc;
 
 public class ProtocolWriteNfc {
   

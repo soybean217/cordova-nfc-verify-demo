@@ -1,4 +1,4 @@
-package com.x;
+package com.x.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,6 +8,8 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.common.util.ConnectionService;
+
+import com.x.info.InfoWineProduct;
 
 public class DaoWine {
 
