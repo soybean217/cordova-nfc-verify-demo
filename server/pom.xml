@@ -27,10 +27,10 @@
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-      <groupId>com.google.code.gson</groupId>
-      <artifactId>gson</artifactId>
-      <version>2.3.1</version>
-    </dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.3.1</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>${final.name}</finalName>
@@ -67,7 +67,42 @@
 					</webResources>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>wagon-maven-plugin</artifactId>
+				<version>1.0-beta-4</version>
+				<executions>
+					<execution>
+						<id>upload-war</id>
+						<phase>install</phase>
+						<goals>
+							<goal>upload-single</goal>
+							<!-- <goal>upload</goal> -->
+						</goals>
+						<configuration>
+							<!-- <fromDir>${basedir}/target</fromDir> -->
+							<!-- <includes>${project.build.finalName}.war</includes> -->
+							<!-- <url>ftp://xxx</url> -->
+							<!-- <toDir>/home/fuming</toDir> -->
+							<!-- <serverId>awstokyo01</serverId> -->
+							<fromFile>target/${final.name}.war</fromFile>
+							<url>${ftp.to.url}</url>
+							<serverId>${ftp.server.id}</serverId>
+							<skip>false</skip>
+							<toFile>${final.name}.war</toFile>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
+		<extensions>
+			<!-- Enabling the use of FTP -->
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-ftp</artifactId>
+				<version>1.0-beta-6</version>
+			</extension>
+		</extensions>
 	</build>
 	<profiles>
 		<profile>
@@ -82,6 +117,8 @@
 			<properties>
 				<runtime.env>packageConfig\betaLq</runtime.env>
 				<final.name>tagtalk</final.name>
+				<ftp.server.id>betaLq</ftp.server.id>
+        <ftp.to.url>ftp://beta.lq:48791/data/apache-tomcat-9.0.0.M6/swap</ftp.to.url>
 			</properties>
 			<activation>
 				<activeByDefault>true</activeByDefault>
