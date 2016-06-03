@@ -7,6 +7,12 @@ public class InfoWineProduct {
   private String score;
   private String winePicUrl;
 
+  @Override
+  public String toString() {
+    return "InfoWineProduct [id=" + id + ", wineName=" + wineName + ", score=" + score + ", winePicUrl=" + winePicUrl
+        + "]";
+  }
+
   public long getId() {
     return id;
   }
